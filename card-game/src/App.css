@@ -54,6 +54,10 @@ h1 {
   font-weight: bold;
 }
 
+p {
+  font-size: 20px;
+}
+
 .button {
   padding: 16px 32px;
   background-color: SlateGray ;
@@ -65,4 +69,28 @@ h1 {
   background-color: LightGrey ; 
   color: black; 
   border: 2px solid SlateGray ;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  padding: 30px;
+  color: GoldenRod ;
+  font-size: 20px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color:  GoldenRod;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

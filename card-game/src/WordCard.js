@@ -10,7 +10,8 @@ const prepareStateFromWord = (given_word) => {
         chars,
         attempt: 1,
         guess: [],
-        completed: false
+        round: 1,
+        completed: false        
         }
    }
    
@@ -29,14 +30,15 @@ export default class WordCard extends Component {
                 this.setState({guess: [], completed: true})                
             }
             else{
-                this.setState({guess: [], attempt: this.state.attempt + 1})
+                this.setState({guess: [], attempt: this.state.attempt + 1, round: this.state.round+1})
                 console.log('Please try again!!!');                
                 }
             }
        }
 
        restart = () => {
-        this.setState({guess: [], attempt: this.state.attempt + 1})    
+        this.setState({guess: [], attempt: this.state.attempt+1 , round: 1})    
+        this.state.completed = false
     }
 
 
@@ -44,14 +46,17 @@ export default class WordCard extends Component {
            return(
                <div>
                    <h1>Card-Game</h1>
-                   <p>ROUND : {this.state.attempt}</p>
+                   <p>ROUND : {this.state.round}</p>
                    {
                        Array.from(this.state.chars).map((c, i) => <CharacterCard value={c} key={i}
                        activationHandler={this.activationHandler}
                        attempt = {this.state.attempt} />) 
                    }                   
                    <h2>{this.state.completed? "You Win!":"Please arrange the card."}</h2>
-                   <button className="button" onClick={this.restart}>RESTART</button>
+                   <div class="tooltip">HINT
+                        <span class="tooltiptext">name of red fruit</span>
+                   </div>
+                   <div><button className="button" onClick={this.restart}>RESTART</button></div>
                </div>
                
            )
