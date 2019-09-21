@@ -40,11 +40,11 @@ export default class WordCard extends Component {
            return(
                <div>
                    <h1>Card-Game</h1>
+                   <p>ROUND : {this.state.attempt}</p>
                    {
                        Array.from(this.state.chars).map((c, i) => <CharacterCard value={c} key={i}
-                        activationHandler={this.activationHandler}
-                       attempt = {this.state.attempt}
-                       />) 
+                       activationHandler={this.activationHandler}
+                       attempt = {this.state.attempt} />) 
                    }                   
                    <h2>{this.state.completed? "You Win!":"Please arrange the card."}</h2>
                </div>
