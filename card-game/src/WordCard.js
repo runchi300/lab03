@@ -37,6 +37,8 @@ export default class WordCard extends Component {
        render(){
            return(
                <div>
+                   <h1>Card Game</h1>
+                   <h2></h2>
                    {
                        Array.from(this.state.chars).map((c, i) => <CharacterCard value={c} key={i}
                         activationHandler={this.activationHandler}
