@@ -35,6 +35,10 @@ export default class WordCard extends Component {
             }
        }
 
+       restart = () => {
+        this.setState({guess: [], attempt: this.state.attempt + 1})    
+    }
+
 
        render(){
            return(
@@ -47,7 +51,7 @@ export default class WordCard extends Component {
                        attempt = {this.state.attempt} />) 
                    }                   
                    <h2>{this.state.completed? "You Win!":"Please arrange the card."}</h2>
-                   <button className="button">RESTART</button>
+                   <button className="button" onClick={this.restart}>RESTART</button>
                </div>
                
            )

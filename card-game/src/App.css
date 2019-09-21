@@ -55,6 +55,14 @@ h1 {
 }
 
 .button {
-  background-color: pink;
-  color : black;
+  padding: 16px 32px;
+  background-color: SlateGray ;
+  color: white;
+  font-size: 15px;
+}
+
+.button:hover {
+  background-color: LightGrey ; 
+  color: black; 
+  border: 2px solid SlateGray ;
 }
